@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">{% block title %} Quiz result: {% endblock %}</h1>
+    <p></p>
+    <br>
+    <h2 class ='subject_header'>{{correct}}/{{total}}</h2>
+    <br>
+    <div>
+        {% for val in range(total) %}
+        <div class = "bio">
+            {% if questions[val] == answers[val] %}
+            <h5 style="color:#157309;">YOUR ANSWER:{{questions[val]}}</h5>
+            <h5 style="color:#157309;">ACTUAL ANSWER:{{answers[val]}}</h5>
+            {% else %}
+            <h5 style="color:#910f1c;">YOUR ANSWER:{{questions[val]}}</h5>
+            <h5 style="color:#910f1c;">ACTUAL ANSWER:{{answers[val]}}</h5>
+            {% endif %}
+            <br>
+        </div>
+        {% endfor %}
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}  {% endblock %} - GibJohn_Tutoring</title>
+    <style>
+        .title {
+            margin: 5px;
+            color: #000000;
+            flex-direction: column;
+            display: block;
+            clear: both;
+        }
+
+        nav a {
+            color: #000000;
+            font-size: 3em;
+            margin-left: 25px;
+            text-decoration: none;
+            text-align: center;
+            position: sticky;
+            margin-right: 25px;
+        }
+
+        .para {
+            color: #000000;
+        }
+
+        .book{
+            width:15%;
+            height:15%;
+            display: block;
+        }
+
+        .video {
+            padding: 10px;
+            margin: 5px;
+            justify-content: center;
+            border-radius: 1vw;
+            outline: solid black;
+        }
+
+        .centre{
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .img_centre{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .scalediweb{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            justify-content: center;
+            height: 150px;
+        }
+
+
+        .content {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .entrybuttons{
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 3px;
+            margin: 20px; 
+        }
+
+        .button1 {
+            flex: 20%;
+            padding: 10px;
+            background-color: #819595;
+            color: #ffffff;
+            border-radius: 0.5vw;
+            width: 250px;
+            height: 125px;
+            cursor: pointer;
+        }
+        .button2:hover {
+            transition-duration: 0.4s;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+        .navbar_img {
+            width: 50px;
+            height: 65px;
+        }
+
+        .topnav-right {
+          float: right;
+        }
+
+        .topnav-left {
+          float: left;
+        }
+
+        .subject_header{
+            margin: 5px;
+            color: #000000;
+        }
+
+
+        .bio {
+            padding: 5px;
+            padding-top: 5px;
+            padding-left:10px;
+            padding-right: 5px;
+            margin: 5px;
+            background-color: #819595;
+            color: #ffffff;
+            border-radius: 1vw;
+            max-width: 300px;
+        }
+
+        .base_info{
+            padding: 5px;
+            padding-top: 5px;
+            padding-left:5%;
+            margin: 5px;
+            width: 300px;
+        }
+
+    </style>
+</head>
+<body style = 'background-color:#B1B6A6'>
+    <nav>
+        <a class ="topnav-left" href="{{ url_for('index') }}"><img class="navbar_img" src="{{url_for('static',filename='books.png')}}"></a>
+        <a class ="topnav-left" href="{{ url_for('about') }}">About</a>
+        {% if current_user.is_authenticated %}
+        <a class = "topnav-left">Hi {{ current_user.username }}</a>
+        {%endif%}
+        {% if current_user.is_authenticated %}
+        <a class ="topnav-right" href="{{ url_for('logout') }}">logout</a>
+        {%endif%}
+        <a class ="topnav-right" href="{{ url_for('login') }}">Login</a>
+        <a class ="topnav-right" href="{{ url_for('register') }}">Register</a>
+    </nav>
+    <div>
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

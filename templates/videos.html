@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+     <h1 class = "title">{% block title %} All videos {% endblock %}</h1>
+
+    <div class ="content">
+        {% for task in all_url %}
+            <div class = "video">
+            <p><b>{{task.subject}}</b></p>
+            <iframe class = "scalediweb" src="{{task.urllink}}" frameborder="0" allowfullscreen></iframe>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

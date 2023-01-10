@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">{% block title %} GibJohn Tutoring {% endblock %}</h1>
+    <div class = "content">
+        <div class="img_centre">
+            <button class="entrybuttons button1 button2" type="button" onClick="location.href='{{ url_for('new_vid') }}'">new video</button>
+        
+            <button class="entrybuttons button1 button2" type="button" onClick="location.href='{{ url_for('videos') }}'">see videos</button>
+
+            <button class="entrybuttons button1 button2" type="button" onClick="location.href='{{ url_for('quizbuilder') }}'">quiz</button>
+        </div>
+    </div>
+{% endblock %}

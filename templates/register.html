@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+     <h1 style="width: 100%"
+        class = "title">{% block title %} register {% endblock %}</h1>
+        <form method="post">
+            <p>
+                <br>
+                <label for="username">username:<br></label>
+                <input type="text" name="username"
+                       placeholder="">
+                </input>
+                <br>
+                <label for="password">password:<br></label>
+                <input type="password" name="password"
+                       placeholder="">
+                </input>
+                <br>
+                <button type="submit">Submit</button>
+            </p>
+        </form>
+
+{% endblock %}

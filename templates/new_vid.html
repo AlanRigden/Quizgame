@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+     <h1 style="width: 100%"
+        class = "title">{% block title %} Add youtube video {% endblock %}</h1>
+    <form method="post">
+        <p>
+            <label for ='subject'>title:<br></label>
+            <input type='text' name='subject'>
+            </input>
+            <br>
+            <label for="new_video">new video embedded url:<br></label>
+            <input type="text" name="new_video"
+            placeholder="https://www.youtube.com/embed/dQw4w9WgXcQ">
+            </input>
+            <br>
+            <br>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+
+{% endblock %}
